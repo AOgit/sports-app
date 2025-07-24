@@ -1,5 +1,7 @@
 "use client";
+import UserCard from "@/components/UserCard/UserCard";
 import { User } from "@/types";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function UsersClientVersion() {
@@ -17,9 +19,12 @@ export default function UsersClientVersion() {
     setUsers(arr);
   }
   return (
-    <div>
+    <div className="list-none mx-auto w-fit">
       {users.map((user) => (
-        <li key={user.id}>{user.name}</li>
+         <div key={user.id} className="mb-4">
+       <UserCard user={user} key={user.id} /> 
+      <Link href={`/users/client-version/${user.id}`}>Details</Link>
+      </div>
       ))}
     </div>
   );

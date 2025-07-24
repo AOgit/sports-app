@@ -1,4 +1,5 @@
 "use client";
+import ProductCard from "@/components/ProductCard/ProductCard";
 import { Product } from "@/types";
 import { useEffect, useState } from "react";
 
@@ -20,11 +21,7 @@ export default function ProductsClientVersion() {
     <section>
       <ol className="list-none mx-auto w-fit">
       {products.map((product: Product) => (
-        <li key={product.id} className="py-4">
-          <span>{product.title} </span>
-          <span> - {product.price}$ </span>
-          <img className="w-[400px]" src={product.images[0]} alt="product image" />
-        </li>
+            <ProductCard product={product} key={product.id} />
       ))}
       </ol>
     </section>

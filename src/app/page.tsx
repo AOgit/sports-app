@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <section>
+    <section className="bg-background! text-foreground!">
       <h1>Welcome to Our Sports Training Platform!</h1>
       <p>
         Whether you`re chasing your first push-up or preparing for your next
