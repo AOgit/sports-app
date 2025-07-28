@@ -1,6 +1,13 @@
 import { createProduct } from "@/app/actions/createProduct";
+import { Category } from "@/types";
 
-export default function CreateProduct() {
+export default async function CreateProduct() {
+  const res = await fetch("https://api.escuelajs.co/api/v1/categories");
+  if (!res.ok){
+    throw new Error ("Failed to fetch categories");
+  }
+  const categories = await res.json();
+
   return (
     <div>
       <form
@@ -65,13 +72,15 @@ export default function CreateProduct() {
           >
             Category ID
           </label>
-          <input
-            type="number"
+          <select
             name="categoryId"
             id="categoryId"
-            placeholder="Category ID"
             className="w-full border border-gray-300 dark:border-gray-600 rounded-md px-4 py-2 text-gray-800 dark:text-white bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-          />
+          >
+            {categories.map((category: Category) => (
+              <option value={category.id} key={category.id}>{category.name}</option>
+            ))}
+          </select>
         </div>
 
         <div>
