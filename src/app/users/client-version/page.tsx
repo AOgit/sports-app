@@ -21,7 +21,7 @@ export default function UsersClientVersion() {
   return (
     <div className="list-none mx-auto w-fit">
       {users.map((user) => (
-         <div key={user.id} className="mb-4">
+         <div key={user.id} className="mb-4 mx-auto">
        <UserCard user={user} key={user.id} /> 
       <Link href={`/users/client-version/${user.id}`}>Details</Link>
       </div>

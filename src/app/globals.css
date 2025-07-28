@@ -1,35 +1,43 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
   --background: #ffffff;
-  --foreground: #7a7878;
+  --foreground: #171717;
+  /* primary secondary accent warning info danger border*/
+  --primary: #b39cd0;
+  --secondary: #e89dcd;
+  --border: #808080;
+  --accent: #ffa3b6;
+  --warning: #ffb594;
+  --success: #4d8076;
 }
 
 .dark {
-  --background: #7a7878;
+  --background: #171717;
   --foreground: #ffffff;
+  --primary: #b39cd0;
+  --secondary: #8195cf;
+  --border: #505050;
+  --accent: #3a8fc5;
+  --warning: #ffb594;
+  --success: #4d8076;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-warning: var(--warning);
+  --color-success: var(--success);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-/* styles.css */
-
-/* Общие настройки */
-body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   margin: 0;

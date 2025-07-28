@@ -1,6 +1,11 @@
-export default function about() {
+export default async function about() {
+  // const BASE_URL = process.env.BASE_URL;
+  // const res = await fetch(BASE_URL + "/api/hello");
+  // const {message} = await res.json();
+
   return (
     <section>
+      {/* <h1>{message}</h1> */}
       <h1>Train Smarter — Online Coaching for Popular Sports</h1>
       <p>
         Take your training to the next level with our expert-led
