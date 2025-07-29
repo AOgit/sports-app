@@ -10,5 +10,4 @@ CREATE TABLE "sports" (
 	"image" varchar(255) NOT NULL,
 	"description" text NOT NULL,
 	CONSTRAINT "sports_title_unique" UNIQUE("title"),
-	CONSTRAINT "sports_description_unique" UNIQUE("description")
 );

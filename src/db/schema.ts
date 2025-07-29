@@ -3,9 +3,9 @@ import { pgTable, varchar, integer, text } from "drizzle-orm/pg-core";
 
 export const sportsTable = pgTable("sports", {
     id: integer().primaryKey().generatedAlwaysAsIdentity(),
-    title: varchar({length: 255}).notNull().unique(),
+    title: varchar({length: 255}).notNull(),
     image: varchar({length: 255}).notNull(),
-    description: text().notNull().unique(),
+    description: text().notNull(),
 })
 
 export const eventsTable = pgTable('events', {
